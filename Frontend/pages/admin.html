@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/admin.css"/>
+</head>
+<body onload="initAdminPage()">
+
+  <header class="navbar">
+    <h2>🛠️ Admin Dashboard</h2>
+    <div class="nav-actions">
+      <span id="adminWelcome"></span>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <section class="admin-section">
+    
+    <!-- Add Menu Button -->
+    <div class="admin-top-bar">
+      <button class="open-modal-btn" onclick="openAddItemModal()">➕ Add Menu Item</button>
+    </div>
+
+    <div class="admin-cards">
+      <div class="admin-card">
+        <h3>Total Orders</h3>
+        <p id="totalOrders">0</p>
+      </div>
+      <div class="admin-card">
+        <h3>Total Revenue</h3>
+        <p>₹<span id="totalRevenue">0</span></p>
+      </div>
+      <div class="admin-card">
+        <h3>Total Users</h3>
+        <p id="totalUsers">0</p>
+      </div>
+    </div>
+
+    <div class="orders-table-container">
+      <h2>All Orders</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>User</th>
+            <th>Items</th>
+            <th>Table</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="adminOrdersTable"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Add Item Modal -->
+  <div id="addItemModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeAddItemModal()">&times;</span>
+      <h2>Add New Menu Item</h2>
+
+      <form id="addItemForm">
+        <input type="text" id="itemName" placeholder="Item Name" required />
+        <textarea id="itemDesc" placeholder="Item Description" required></textarea>
+        <input type="number" id="itemPrice" placeholder="Price" required />
+        <input type="text" id="itemImage" placeholder="Image URL" required />
+
+        <select id="itemCategory" required>
+          <option value="">Select Category</option>
+          <option value="coffee">Coffee</option>
+          <option value="cold drinks">Cold Drinks</option>
+          <option value="tea">Tea</option>
+          <option value="bakery">Bakery</option>
+          <option value="desserts">Desserts</option>
+          <option value="snacks">Snacks</option>
+          <option value="meals">Meals</option>
+        </select>
+
+        <button type="submit" class="submit-btn">Add Item</button>
+        <p id="addItemMessage" class="success-message"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

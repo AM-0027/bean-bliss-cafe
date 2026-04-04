@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bean Bliss Café - Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <section class="auth-page">
+
+    <!-- LEFT SIDE -->
+<div class="auth-left">
+  <div class="overlay"></div>
+  <div class="light-blur blur-one"></div>
+  <div class="light-blur blur-two"></div>
+
+  <div class="auth-left-content">
+    <span class="tag">☕ Crafted for Coffee Lovers</span>
+
+    <h1>
+      Brewed for <br>
+      Cozy Moments
+    </h1>
+
+    <p>
+      Experience handcrafted coffee, delicious café bites,
+      and a beautifully warm digital space made for every mood.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat-card">
+        <h3>50+</h3>
+        <span>Premium Menu Items</span>
+      </div>
+
+      <div class="stat-card">
+        <h3>24/7</h3>
+        <span>Easy Ordering Access</span>
+      </div>
+    </div>
+
+    <div class="quote-card">
+      <p>“A cup of coffee shared with comfort is a little moment of happiness.”</p>
+    </div>
+  </div>
+</div>
+    <!-- RIGHT SIDE -->
+    <div class="auth-right">
+      <div class="floating-circle one"></div>
+      <div class="floating-circle two"></div>
+      <div class="floating-circle three"></div>
+
+      <div class="auth-box">
+        <div class="brand-mini">☕ Bean Bliss</div>
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Login or create your café account</p>
+
+        <div class="tabs">
+          <button class="tab-btn active" onclick="showAuthTab('login', this)">Login</button>
+          <button class="tab-btn" onclick="showAuthTab('signup', this)">Signup</button>
+        </div>
+
+        <!-- LOGIN -->
+        <div id="loginTab" class="auth-tab active">
+          <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="loginUsername" placeholder="Enter username">
+          </div>
+
+          <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter password">
+          </div>
+
+          <div class="input-group">
+            <label>Role</label>
+            <select id="loginRole">
+              <option value="customer">Customer</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
+          <button class="main-auth-btn" onclick="loginUser()">Login</button>
+
+          <p class="bottom-text">
+            Don’t have an account?
+            <span onclick="showAuthTab('signup', document.querySelectorAll('.tab-btn')[1])">Create one</span>
+          </p>
+        </div>
+
+        <!-- SIGNUP -->
+        <div id="signupTab" class="auth-tab">
+          <div class="input-group">
+            <label>Username</label>
+            <input type="text" id="signupUsername" placeholder="Choose username">
+          </div>
+
+          <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="signupPassword" placeholder="Create password">
+          </div>
+
+          <div class="input-group">
+            <label>Role</label>
+            <select id="signupRole">
+              <option value="customer">Customer</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+
+          <button class="main-auth-btn" onclick="signupUser()">Create Account</button>
+
+          <p class="bottom-text">
+            Already have an account?
+            <span onclick="showAuthTab('login', document.querySelectorAll('.tab-btn')[0])">Login</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
